@@ -1,0 +1,33 @@
+.navbar {
+    height: 100px;
+
+    .wrapper {
+        max-width: 1366px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        height: 100px;
+
+        span {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+
+            a {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                color: lightgray;
+
+                img[src="/linkedin-logo.png"] {
+                    width: 180px !important;
+                }
+            }
+        }
+    }
+}
