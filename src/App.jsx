@@ -5,13 +5,13 @@ import {motion} from 'framer-motion';
 const App = () => {
   return <div>
     <section><Navbar/></section>
-    <section>Hero</section>
-    <section>Parallax</section>
-    <section>Services</section>
-    <section>Portfolio1</section>
+    <section id='Homepage'>Hero</section>
+    <section id='About'>Parallax</section>
+    <section id='Services'>Services</section>
+    <section id='Projects'>Portfolio1</section>
     <section>Portfolio2</section>
     <section>Portfolio3</section>
-    <section>Contact</section>
+    <section id='Contact'>Contact</section>
   </div>;
 };
 

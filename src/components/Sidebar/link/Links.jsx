@@ -1,8 +1,29 @@
+const variants = {
+  open: {
+    transition: {
+      staggeredChildren: 0.1,
+    },
+  },
+  closed: {
+    transition: {
+      staggeredChildren: 0.05,
+      staggeredDirection: -1, 
+    },
 
+  },
+}
 
 const Links = () => {
+    const items = ['Homepage', 'Contact', 'Services',  'Projects', 'About' ];
+
   return (
-    <div>Links</div>
+    <div className="links">
+        {items.map((item) => (
+            <a href={`#${item}`} key={item}>
+                {item}
+            </a>
+        ))}
+    </div>
   )
 }
 
