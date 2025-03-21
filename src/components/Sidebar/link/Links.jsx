@@ -1,30 +1,44 @@
+import { motion } from 'framer-motion';
+
 const variants = {
   open: {
     transition: {
-      staggeredChildren: 0.1,
+      staggerChildren: 0.1,
     },
   },
   closed: {
     transition: {
-      staggeredChildren: 0.05,
-      staggeredDirection: -1, 
+      staggerChildren: 0.05,
+      staggerDirection: -1,
     },
-
   },
-}
+};
 
-const Links = () => {
-    const items = ['Homepage', 'Contact', 'Services',  'Projects', 'About' ];
+const itemVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: { duration: 0.3 },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 0.3 },
+  },
+};
+
+const Links = ({ isOpen }) => {  //  Accept isOpen as a prop
+  const items = ['Homepage', 'Contact', 'Services', 'Projects', 'About'];
 
   return (
-    <div className="links">
-        {items.map((item) => (
-            <a href={`#${item}`} key={item}>
-                {item}
-            </a>
-        ))}
-    </div>
-  )
-}
+    <motion.div className="links" variants={variants} initial="closed" animate={isOpen ? "open" : "closed"}>
+      {items.map((item) => (
+        <motion.a href={`#${item}`} key={item} variants={itemVariants}>
+          {item}
+        </motion.a>
+      ))}
+    </motion.div>
+  );
+};
 
-export default Links
+export default Links;
